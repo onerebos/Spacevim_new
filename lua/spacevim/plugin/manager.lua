@@ -22,3 +22,18 @@ local function need_cmd(cmd)
     return false
   end
 end
+
+local function get_uninstalled_plugins()
+  local p = {}
+  local values = vim.fn['dein#get']()
+  for _, v in pairs(values) do
+    if vim.fn.isdirectory(v.path) == 0 then
+      table.insert(p, v)
+    end
+  end
+  return p
+end
+
+return function ()
+  vim.inspect(get_uninstalled_plugins())
+end
