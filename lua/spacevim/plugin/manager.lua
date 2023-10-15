@@ -6,6 +6,8 @@
 -- License: GPLv3
 --=============================================================================
 
+local M = {}
+
 local log = require('spacevim.logger').derive('dein-ui')
 
 
@@ -34,6 +36,8 @@ local function get_uninstalled_plugins()
   return p
 end
 
-return function ()
-  vim.inspect(get_uninstalled_plugins())
+function M.install(...)
+  
 end
+
+return M
