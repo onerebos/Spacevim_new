@@ -15,6 +15,13 @@ local plugins = {}
 local failed_plugins = {}
 local pulling_repos = {}
 local building_repos = {}
+local retry_cnt = 0
+local on_reinstall = false
+
+local ui_buf = {}
+local plugin_manager_buffer = 0
+local plugin_manager_buffer_lines = {}
+local jobpid = 0
 
 local function need_cmd(cmd)
   if vim.fn.executable(cmd) == 1 then
@@ -37,6 +44,8 @@ local function get_uninstalled_plugins()
 end
 
 function M.install(...)
+
+
   
 end
 
