@@ -45,6 +45,10 @@ end
 
 function M.install(...)
 
+  local plugins = select(1, ...)
+
+  if not plugins then plugins = {} end
+
 
   
 end
